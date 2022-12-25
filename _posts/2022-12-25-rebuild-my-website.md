@@ -26,6 +26,7 @@ tags: collect
     - 安装ruby及ruby-devel
     - 安装jekyll
     遇到问题的话，请参考Jekyll官方文档，https://jekyllrb.com/docs/
+
     ```bash
     # 安装基础依赖
     sudo zypper install -t pattern devel_ruby devel_C_C++
@@ -49,6 +50,7 @@ tags: collect
     由于github经常丢包，我在国内搞了一个镜像，https://gitcode.net/weixin_57675453/minimal-mistakes
 
     这个theme可能无法直接用的，相关调整
+
     ```bash
     # 在这个位置加入github-pages和jekyll-remote-theme两个plugin
     group :jekyll_plugins do
@@ -75,6 +77,7 @@ tags: collect
 - 调整主站
 
     这个子站最终的路径是honwhy.wang/blog，接下来是调整主站。将主站的内容清空，新建一个单独的页面。参考splash模板写好一个画栏模式的展示页，注意permalink应该是/。
+
     ```bash
         ---
         title: "Home"
