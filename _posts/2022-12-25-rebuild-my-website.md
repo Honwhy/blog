@@ -1,7 +1,7 @@
 ---
 layout: posts
 classes: wide
-category: blog jekyll
+category: jekyll
 comments: true
 title: 重新组织一下个人网站
 tags: collect
@@ -98,3 +98,4 @@ tags: collect
 
         {% include feature_row %}
     ```
+    
