@@ -77,8 +77,8 @@ tags: collect
 - 调整主站
 
     这个子站最终的路径是honwhy.wang/blog，接下来是调整主站。将主站的内容清空，新建一个单独的页面。参考splash模板写好一个画栏模式的展示页，注意permalink应该是/。
-
-    ```bash
+    
+    >
         ---
         title: "Home"
         layout: splash
@@ -97,5 +97,5 @@ tags: collect
         ---
 
         {% include feature_row %}
-    ```
+        
     
