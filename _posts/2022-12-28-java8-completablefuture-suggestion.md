@@ -71,18 +71,18 @@ static void play() {
 From a macroscopic perspective, `play` method shall run within 1000ms, while from a microscopic perspective, any task may have not begin to run or have not finished.
 
 
-# What's the Matter
+## What's the Matter
 Every task should begin to run as quickly as possible, and finish up in a short time. If any task is unlucky, it get stuck in the `ThreadPoolExecutore`'s queue, or holds resource of `ThreadPoolExecutore`'s `Thread`. That's the matter.
 
 When the application is at a high traffic, every millisecond counts, which we don't like to waste any. For example, with a thread pool, core size at 4, max size at 8, having a queue, size at 100.
 
-## Issue 1: Queueing
+### Issue 1: Queueing
 Task of User-8 may have enter the queue earlier than User-5's, as a result, User-8's task get change to run earlier than User-5's. 
 
 ![queueing](https://user-images.githubusercontent.com/2212273/209836738-418628a3-b3f7-44c5-8242-b2bc9f1cbc66.jpg)
 
 
-## Issue 2: Time is Burning Out
+### Issue 2: Time is Burning Out
 When the `play` method is called, the clock is ticked in at the same moment, but its tasks will be executed by thread pool some time later. In another word, it may happen that `play` method finish work earlier than its tasks, cause tasks remain in the queue. 
 
 ![time-burn-out](https://user-images.githubusercontent.com/2212273/209838361-55ed2a11-85e3-4c4f-8df7-18b8d2e9b5c3.jpg)
