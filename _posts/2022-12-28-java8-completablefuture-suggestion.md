@@ -130,7 +130,7 @@ code,
 
 ```java
 public class App {
-    static BlockingQueue<Runnable> blockingQueue = new ArrayBlockingQueue<>(200);
+    static BlockingQueue<Runnable> blockingQueue = new ArrayBlockingQueue<>(100);
     static ThreadPoolExecutor threadPoolExecutor = new InterruptableThreadPoolExecutor(4, 8, 60, TimeUnit.SECONDS, blockingQueue);
     static Object PRESENT = new Object();
     public static void main(String[] args) {
