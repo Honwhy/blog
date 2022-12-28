@@ -10,7 +10,7 @@ tags: java
 {:toc}
 
 ## Improving Performance with Java’s CompletableFuture
-[Improving Performance with Java’s CompletableFuture](https://reflectoring.io/java-completablefuture/), `CompletableFuture` is what we use when we want to run tasks in parllel mode. This is just the example from the website,
+[Improving Performance with Java’s CompletableFuture](https://reflectoring.io/java-completablefuture/), `CompletableFuture` is what we use when we want to run tasks in parallel mode. This is just the example from the website,
 
 ```java
 Executor executor = Executors.newFixedThreadPool(10);
@@ -72,9 +72,9 @@ From a macroscopic perspective, `play` method shall run within 1000ms, while fro
 
 
 # What's the Matter
-Every task should begin to run as quickly as possible, and finish up in a short time. If any task is unlucky, it get stuck in the `ThreadPoolExecutore`'s queue, holds resource of `ThreadPoolExecutore`'s `Thread`. That's the matter.
+Every task should begin to run as quickly as possible, and finish up in a short time. If any task is unlucky, it get stuck in the `ThreadPoolExecutore`'s queue, or holds resource of `ThreadPoolExecutore`'s `Thread`. That's the matter.
 
-When the application is at a high traffic, each second counts, which we don't like to waste any. For example, with a thread pool, core size at 4, max size at 8, having a queue, size at 100.
+When the application is at a high traffic, every millisecond counts, which we don't like to waste any. For example, with a thread pool, core size at 4, max size at 8, having a queue, size at 100.
 
 ## Issue 1: Queueing
 Task of User-8 may have enter the queue earlier than User-5's, as a result, User-8's task get change to run earlier than User-5's. 
@@ -104,7 +104,7 @@ try {
 }
 ```
 
-We clean tasks that will not run.
+We clean tasks that shall not run.
 ```java
 @Override
 protected void beforeExecute(Thread t, Runnable r) {
