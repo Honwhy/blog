@@ -77,7 +77,7 @@ Every task should begin to run as quickly as possible, and finish up in a short 
 When the application is at a high traffic, every millisecond counts, which we don't like to waste any. For example, with a thread pool, core size at 4, max size at 8, having a queue, size at 100.
 
 ### Issue 1: Queueing
-Task of User-8 may have enter the queue earlier than User-5's, as a result, User-8's task get change to run earlier than User-5's. 
+Task of User-8 may have enter the queue earlier than User-5's, as a result, User-8's task get chance to run earlier than User-5's. 
 
 ![queueing](https://user-images.githubusercontent.com/2212273/209836738-418628a3-b3f7-44c5-8242-b2bc9f1cbc66.jpg)
 
